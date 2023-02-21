@@ -1,0 +1,25 @@
+table{
+    border: 1px solid black;
+}
+.cell {
+    height: 100px;
+    width: 100px;
+    border: 1.5px solid grey;
+    border-style: inset;
+}
+
+.blackcell {
+    background-color: black;
+}
+
+.whitecell {
+    background-color: white;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 95vw;
+    height: 95vh;
+}
