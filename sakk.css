@@ -9,11 +9,11 @@ table{
 }
 
 .blackcell {
-    background-color: black;
+    background-color: #22577E;
 }
 
 .whitecell {
-    background-color: white;
+    background-color: #BDCDD6;
 }
 .center{
     display: flex;
@@ -22,4 +22,16 @@ table{
     align-content: center;
     width: 95vw;
     height: 95vh;
+}
+p{
+    text-align: center;
+    font-size: 50px;
+    margin: 10px;
+}
+
+.whitefigures{
+    color: #FFF1DC;
+}
+.blackfigures{
+    color: #06283D;
 }

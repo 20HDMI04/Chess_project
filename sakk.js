@@ -1,30 +1,30 @@
 let chessfigures = {
     
-    whiteking: "♔",
+    whiteking: "♚",
     
     blackking: "♚",
     
-    whitequeen: "♕",
+    whitequeen: "♛",
     
     blackqueen: "♛",
     
     blackbastion1: "♜",
     blackbastion2: "♜",
     
-    whitebastion1: "♖",
-    whitebastion1: "♖",
+    whitebastion1: "♜",
+    whitebastion2: "♜",
     
     blackbishop1: "♝",
     blackbishop2: "♝",
     
-    whitebishop1: "♗",
-    whitebishop2: "♗",
+    whitebishop1: "♝",
+    whitebishop2: "♝",
     
     blackknight1: "♞",
     blackknight2: "♞",
     
-    whiteknight1: "♘",
-    whiteknight2: "♘",
+    whiteknight1: "♞",
+    whiteknight2: "♞",
     
     blackpawn1: "♟",
     blackpawn2: "♟",
@@ -35,14 +35,14 @@ let chessfigures = {
     blackpawn7: "♟",
     blackpawn8: "♟",
     
-    whitepawn1: "♙",
-    whitepawn2: "♙",
-    whitepawn3: "♙",
-    whitepawn4: "♙",
-    whitepawn5: "♙",
-    whitepawn6: "♙",
-    whitepawn7: "♙",
-    whitepawn8: "♙",
+    whitepawn1: "♟",
+    whitepawn2: "♟",
+    whitepawn3: "♟",
+    whitepawn4: "♟",
+    whitepawn5: "♟",
+    whitepawn6: "♟",
+    whitepawn7: "♟",
+    whitepawn8: "♟",
 };
 betuk = ["0","a","b","c","d","e","f","g","h"];
 function tablemaker() {
@@ -72,17 +72,40 @@ function tablemaker() {
 
 function start_game() {
     let blueprintforwhite = [null, "whitebastion1", "whiteknight1", "whitebishop1", "whiteking", "whitequeen", "whitebishop2", "whiteknight2", "whitebastion2"];
-    /*let blueprintforwhitepawn = [null, whitepawn1, whitepawn2, whitepawn3, whitepawn4, whitepawn5, whitepawn6, whitepawn7, whitepawn8];
-    let blueprintforblackpawn = [null, blackpawn1, blackpawn2, blackpawn3, blackpawn4, blackpawn5, blackpawn6, blackpawn7, blackpawn8];*/
+    let blueprintforblack = [null, "blackbastion1", "blackknight1", "blackbishop1",  "blackqueen", "blackking", "blackbishop2", "blackknight2", "blackbastion2"];
+    let blueprintforwhitepawn = [null, "whitepawn1", "whitepawn2", "whitepawn3", "whitepawn4", "whitepawn5", "whitepawn6", "whitepawn7", "whitepawn8"];
+    let blueprintforblackpawn = [null, "blackpawn1", "blackpawn2", "blackpawn3", "blackpawn4", "blackpawn5", "blackpawn6", "blackpawn7", "blackpawn8"];
     for (let i = 1; i < 9; i++) {
         for (let j = 1; j < 9; j++) {
-            let p = document.createElement('p');
-            document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
             if (i == 1) {
+                let p = document.createElement('p');
+                document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
                 p.innerText = chessfigures[blueprintforwhite[j]];
-            } 
+                p.setAttribute('class', 'whitefigures');
+            }
+            if (i == 2) {
+                let p = document.createElement('p');
+                document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
+                p.innerText = chessfigures[blueprintforwhitepawn[j]];
+                p.setAttribute('class', 'whitefigures');
+            }
+            if (i == 7) {
+                let p = document.createElement('p');
+                document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
+                p.innerText = chessfigures[blueprintforblackpawn[j]];
+                p.setAttribute('class', 'blackfigures');
+            }
+            if (i == 8) {
+                let p = document.createElement('p');
+                document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
+                p.innerText = chessfigures[blueprintforblack[j]];
+                p.setAttribute('class', 'blackfigures');
+            }
         }
         
     };
+
+    
 }
 
+//document.getElementById(betuk[j] + '-' + i.toString()).children[0].setAttribute('class', 'whitefigures')
