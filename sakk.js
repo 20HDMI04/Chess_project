@@ -82,30 +82,31 @@ function start_game() {
                 document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
                 p.innerText = chessfigures[blueprintforwhite[j]];
                 p.setAttribute('class', 'whitefigures');
+                p.id = blueprintforwhite[j]
             }
             if (i == 2) {
                 let p = document.createElement('p');
                 document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
                 p.innerText = chessfigures[blueprintforwhitepawn[j]];
                 p.setAttribute('class', 'whitefigures');
+                p.id = blueprintforwhitepawn[j]
             }
             if (i == 7) {
                 let p = document.createElement('p');
                 document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
                 p.innerText = chessfigures[blueprintforblackpawn[j]];
                 p.setAttribute('class', 'blackfigures');
+                p.id = blueprintforblackpawn[j]
+
             }
             if (i == 8) {
                 let p = document.createElement('p');
                 document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
                 p.innerText = chessfigures[blueprintforblack[j]];
                 p.setAttribute('class', 'blackfigures');
+                p.id = blueprintforblack[j]
             }
         }
         
     };
-
-    
-}
-
-//document.getElementById(betuk[j] + '-' + i.toString()).children[0].setAttribute('class', 'whitefigures')
+};
