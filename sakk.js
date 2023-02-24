@@ -1,11 +1,9 @@
 let chessfigures = {
     
     whiteking: "♚",
-    
     blackking: "♚",
     
     whitequeen: "♛",
-    
     blackqueen: "♛",
     
     blackbastion1: "♜",

@@ -35,3 +35,18 @@ p{
 .blackfigures{
     color: #06283D;
 }
+button{
+    background-color: #22577E;
+    border: none;
+    color:#BDCDD6;
+    width: 6vw;
+    height: 2.7vw;
+    float: right;
+    font-size: 24px;
+}
+input{
+    width: 6vw;
+    height: 2.4vw;
+    font-size: 24px;
+    float: right;
+}
