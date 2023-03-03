@@ -108,3 +108,19 @@ function start_game() {
         
     };
 };
+
+let honnanlepesek = []
+let hovalepesek = []
+function appendeles() {
+       const ertek = document.getElementById("lepesek").value;
+       const uj = ertek.split(' ');
+       honnanlepesek.push(uj[0]);
+       hovalepesek.push(uj[1]);
+       document.getElementById("lepesek").value = ""
+       lepesmegtortent()
+}
+
+function lepesmegtortent() {
+    document.getElementById(honnanlepesek[0])
+    document.getElementById(hovalepesek[0])    
+}
