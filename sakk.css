@@ -43,6 +43,7 @@ button{
     height: 2.7vw;
     float: right;
     font-size: 24px;
+    cursor: pointer;
 }
 input{
     width: 6vw;

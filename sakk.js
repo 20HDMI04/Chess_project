@@ -51,7 +51,7 @@ function tablemaker() {
         const row = document.createElement('tr');
         for (let j = 8; j > 0; j--) {
             let td = row.appendChild(document.createElement('td'))
-            td.id = betuk[j] + '-' + i.toString()
+            td.id = betuk[j] + i.toString()
             if ((i + j) % 2 == 0) {
                 td.setAttribute('class', 'cell whitecell');
                 row.appendChild(td);
@@ -77,21 +77,21 @@ function start_game() {
         for (let j = 1; j < 9; j++) {
             if (i == 1) {
                 let p = document.createElement('p');
-                document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
+                document.getElementById(betuk[j] + i.toString()).appendChild(p);
                 p.innerText = chessfigures[blueprintforwhite[j]];
                 p.setAttribute('class', 'whitefigures');
                 p.id = blueprintforwhite[j]
             }
             if (i == 2) {
                 let p = document.createElement('p');
-                document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
+                document.getElementById(betuk[j] + i.toString()).appendChild(p);
                 p.innerText = chessfigures[blueprintforwhitepawn[j]];
                 p.setAttribute('class', 'whitefigures');
                 p.id = blueprintforwhitepawn[j]
             }
             if (i == 7) {
                 let p = document.createElement('p');
-                document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
+                document.getElementById(betuk[j] + i.toString()).appendChild(p);
                 p.innerText = chessfigures[blueprintforblackpawn[j]];
                 p.setAttribute('class', 'blackfigures');
                 p.id = blueprintforblackpawn[j]
@@ -99,7 +99,7 @@ function start_game() {
             }
             if (i == 8) {
                 let p = document.createElement('p');
-                document.getElementById(betuk[j] + '-' + i.toString()).appendChild(p);
+                document.getElementById(betuk[j] + i.toString()).appendChild(p);
                 p.innerText = chessfigures[blueprintforblack[j]];
                 p.setAttribute('class', 'blackfigures');
                 p.id = blueprintforblack[j]
@@ -112,15 +112,15 @@ function start_game() {
 let honnanlepesek = []
 let hovalepesek = []
 function appendeles() {
-       const ertek = document.getElementById("lepesek").value;
-       const uj = ertek.split(' ');
+       let ertek = document.getElementById("lepesek").value;
+       let uj = ertek.split(' ');
        honnanlepesek.push(uj[0]);
        hovalepesek.push(uj[1]);
-       document.getElementById("lepesek").value = ""
-       lepesmegtortent()
+       document.getElementById("lepesek").value = "";
+       lepesmegtortent();
 }
 
 function lepesmegtortent() {
-    document.getElementById(honnanlepesek[0])
-    document.getElementById(hovalepesek[0])    
+    console.log(document.getElementById(honnanlepesek[0]).children());
+    console.log(document.getElementById(hovalepesek[0]).children())    
 }
