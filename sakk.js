@@ -14,7 +14,7 @@ let chessfigures = {
     
     blackbishop1: "♝",
     blackbishop2: "♝",
-    
+
     whitebishop1: "♝",
     whitebishop2: "♝",
     
@@ -42,14 +42,14 @@ let chessfigures = {
     whitepawn7: "♟",
     whitepawn8: "♟",
 };
-betuk = ["0","a","b","c","d","e","f","g","h"];
+betuk = ['0','h','g','f','e','d','c','b','a'];
 function tablemaker() {
     let center = document.createElement('div');
     center.classList.add('center')
     const chesstable = document.createElement('table');
-    for (let i = 1; i < 9; i++) {
+    for (let i = 8; i > 0; i--) {
         const row = document.createElement('tr');
-        for (let j = 1; j < 9; j++) {
+        for (let j = 8; j > 0; j--) {
             let td = row.appendChild(document.createElement('td'))
             td.id = betuk[j] + '-' + i.toString()
             if ((i + j) % 2 == 0) {
@@ -70,7 +70,7 @@ function tablemaker() {
 
 function start_game() {
     let blueprintforwhite = [null, "whitebastion1", "whiteknight1", "whitebishop1", "whiteking", "whitequeen", "whitebishop2", "whiteknight2", "whitebastion2"];
-    let blueprintforblack = [null, "blackbastion1", "blackknight1", "blackbishop1",  "blackqueen", "blackking", "blackbishop2", "blackknight2", "blackbastion2"];
+    let blueprintforblack = [null, "blackbastion1", "blackknight1", "blackbishop1", "blackking","blackqueen", "blackbishop2", "blackknight2", "blackbastion2"];
     let blueprintforwhitepawn = [null, "whitepawn1", "whitepawn2", "whitepawn3", "whitepawn4", "whitepawn5", "whitepawn6", "whitepawn7", "whitepawn8"];
     let blueprintforblackpawn = [null, "blackpawn1", "blackpawn2", "blackpawn3", "blackpawn4", "blackpawn5", "blackpawn6", "blackpawn7", "blackpawn8"];
     for (let i = 1; i < 9; i++) {
