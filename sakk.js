@@ -112,15 +112,32 @@ function start_game() {
 let honnanlepesek = []
 let hovalepesek = []
 function appendeles() {
+       delete honnanlepesek.values()
+       delete hovalepesek.values()
        let ertek = document.getElementById("lepesek").value;
+       if (ertek.length > 5) {
+        let osszes = ertek.split(',');
+        let lepesek = [];
+        for (let i = 0; i < osszes.length; i++) {
+            lepesek.push(osszes[i])
+            let lepes = lepesek[i].split(' '); 
+            honnanlepesek.push(lepes[0]);
+            hovalepesek.push(lepes[1])
+        }
        let uj = ertek.split(' ');
        honnanlepesek.push(uj[0]);
        hovalepesek.push(uj[1]);
        document.getElementById("lepesek").value = "";
-       lepesmegtortent();
-}
-
-function lepesmegtortent() {
-    console.log(document.getElementById(honnanlepesek[0]).children());
-    console.log(document.getElementById(hovalepesek[0]).children())    
+       if (honnanlepesek.length > 1) {
+        for (let i = 0; i < honnanlepesek.length; i++) {
+         figure = document.getElementById(honnanlepesek[i]).children;
+         hova = document.getElementById(hovalepesek[i]);
+            
+            
+        }
+       } else {
+        figure = document.getElementById(honnanlepesek[0]).children;
+        hova = document.getElementById(hovalepesek[0]);
+        }
+    }
 }
