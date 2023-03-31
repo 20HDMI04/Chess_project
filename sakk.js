@@ -112,32 +112,24 @@ function start_game() {
 let honnanlepesek = []
 let hovalepesek = []
 function appendeles() {
-       delete honnanlepesek.values()
-       delete hovalepesek.values()
-       let ertek = document.getElementById("lepesek").value;
-       if (ertek.length > 5) {
-        let osszes = ertek.split(',');
-        let lepesek = [];
-        for (let i = 0; i < osszes.length; i++) {
-            lepesek.push(osszes[i])
-            let lepes = lepesek[i].split(' '); 
-            honnanlepesek.push(lepes[0]);
-            hovalepesek.push(lepes[1])
+       honnanlepesek.length = 0;
+        hovalepesek.length = 0;
+        let ertek = document.getElementById("lepes").value;
+        
+        if (ertek.length > 5) {
+            let osszesertek = ertek.split(',');
+            let osszeslista = []
+            for (let i = 0; i < osszesertek.length; i++) {
+                osszeslista.push(osszesertek[i]);
+            }
+            for (let j = 0; j < osszeslista.length; j++) {
+                let tobbuj = osszeslista[j].split(' ');
+                honnanlepesek.push(tobbuj[0]);
+                hovalepesek.push(tobbuj[1]);   
+            }
+        } else {
+            let uj = ertek.split(' ');
+            honnanlepesek.push(uj[0]);
+            hovalepesek.push(uj[1]);
         }
-       let uj = ertek.split(' ');
-       honnanlepesek.push(uj[0]);
-       hovalepesek.push(uj[1]);
-       document.getElementById("lepesek").value = "";
-       if (honnanlepesek.length > 1) {
-        for (let i = 0; i < honnanlepesek.length; i++) {
-         figure = document.getElementById(honnanlepesek[i]).children;
-         hova = document.getElementById(hovalepesek[i]);
-            
-            
-        }
-       } else {
-        figure = document.getElementById(honnanlepesek[0]).children;
-        hova = document.getElementById(hovalepesek[0]);
-        }
-    }
 }
